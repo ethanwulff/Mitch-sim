@@ -6,63 +6,32 @@
     <title>
         Mitchell Simulator
     </title>
-    <style>
-        body {
-            background-color: pink;
-            font-family: Helvetica;
-        }
-
-        img {
-            height: 100px;
-            border: 3px solid red;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>
-        1 click = 1 money
-    </h1>
+    <h1 id="title">Mitchell Simulator</h1>
+    <h6>&copy;2019</h6>
+    <h2>
+        1 click = 1 dollard
+    </h2>
+
     <button id="work">
         Costco
     </button>
-    <p id="counter">
+
+    <p id="dollars">
         dollards:
+    </p>
+
+    <p id="mood">
+        mood:
     </p>
 
     <img src="https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F2%2F23%2FUber_eats_logo_2017_06_22.jpg&f=1&nofb=1"
         id="ubereats">
 
-    <script>
-        let dollars = 0;
-
-        let button = document.getElementById("work");
-
-        let counter = document.getElementById("counter");
-
-        let img = document.getElementById("ubereats");
-
-        // work event listener
-        button.addEventListener("click", function () {
-            console.log("clicked");
-            dollars++;
-            console.log(dollars);
-            counter.innerHTML = "dollards: " + dollars;
-        });
-
-        // eats even listener
-        img.addEventListener("click", function () {
-            if (dollars >= 5) {
-                dollars -= 5;
-
-                console.log("eats");
-
-                console.log(dollars);
-                counter.innerHTML = "dollards: " + dollars;
-            }
-        });
-
-    </script>
+    <script src="script.js"></script>
 </body>
 
 

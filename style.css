@@ -1,0 +1,28 @@
+body {
+    background-color: pink;
+    font-family: Helvetica;
+}
+
+img {
+    height: 100px;
+    border: 3px solid red;
+}
+
+/* Heading Style */
+
+h1#title {
+    animation-name: scale;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate; 
+}
+
+@keyframes scale {
+    from {
+        transform: scale(60%);
+    }
+
+    to {
+        transform: scale(100%)
+    }
+}
