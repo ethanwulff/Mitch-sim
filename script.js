@@ -20,6 +20,7 @@ button.addEventListener("click", function () {
     console.log(dollars);
     console.log(mood);
     dollars.innerHTML = "dollards: " + dollars;
+    mood.innerHTML = "mood: " + mood;
 });
 
 // eats even listener
