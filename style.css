@@ -8,21 +8,12 @@ img {
     border: 3px solid red;
 }
 
-/* Heading Style */
-
-h1#title {
-    animation-name: scale;
-    animation-duration: 6s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate; 
-}
-
-@keyframes scale {
-    from {
-        transform: scale(60%);
-    }
-
-    to {
-        transform: scale(100%)
-    }
+.item {
+    display: inline-block;
+    padding: 10px;
+    width: 150px;
+    height: 180px;
+    margin-left: 10px;
+    text-align: center;
+    border: 3px solid maroon;
 }

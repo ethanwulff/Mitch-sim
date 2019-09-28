@@ -2,35 +2,52 @@ let dollars = 0;
 
 let sadness = 0;
 
+let mood = 10;
+
 let button = document.getElementById("work");
 
-let dollars = document.getElementById("dollars");
+let dollarsDiv = document.getElementById("dollars");
 
-let mood = document.getElementById("mood");
+let moodDiv = document.getElementById("mood");
 
 let img = document.getElementById("ubereats");
 
-
+let endgameDiv = document.getElementById("endgame");
 
 // work event listener
 button.addEventListener("click", function () {
-    console.log("clicked");
     dollars++;
-    mood -= 1;
-    console.log(dollars);
-    console.log(mood);
-    dollars.innerHTML = "dollards: " + dollars;
-    mood.innerHTML = "mood: " + mood;
+    mood--;
+    updateDivs();
 });
 
 // eats even listener
 img.addEventListener("click", function () {
-    if (dollars >= 5) {
-        dollars -= 5;
+    dollars -= 5;
+    mood += 5;
+    updateDivs();
+});
 
-        console.log("eats");
+function updateDivs() {
+    dollarsDiv.innerHTML = "dollards: " + dollars;
+    moodDiv.innerHTML = "mood: " + mood;
+    endGame();
+}
 
-        console.log(dollars);
-        dollars.innerHTML = "dollards: " + dollars;
+function endGame() {
+    if (dollars < 0) {
+        for (let i = 0; i < 1000; i++) {
+            let h1 = document.createElement("h1");
+            let text = document.createTextNode("DEBT COLLECTORS EAT YOUR ASS");
+            h1.append(text);
+            endgameDiv.appendChild(h1);
+        }
+    } else if (mood < 0) {
+        for (let i = 0; i < 1000; i++) {
+            let h1 = document.createElement("h1");
+            let text = document.createTextNode("YOU ARE TOO DEPRESSED TO LIVE");
+            h1.append(text);
+            endgameDiv.appendChild(h1);
+        }
     }
-}); 
+}
